@@ -1,0 +1,39 @@
+[user]
+	name = Daniel Illouz
+	email = daniel.illouz@me.com
+[color]
+	ui = true
+	branch = true
+	diff = true
+	interactive = true
+	status = true
+[color "status"]
+    added = green
+	changed = magenta
+	deleted = red
+	untracked = yellow
+[alias]
+	aliases = config --get-regexp alias
+	s = status -sb
+	aa = add --all
+	l = log --stat --graph --pretty=format:\"%C(green)%d%Creset %C(yellow)%h%Creset %C(magenta)(%cr)%Creset %C(blue)<%cn>%Creset %s\"
+	h = log --pretty=format:\"%C(green)%d%Creset %C(yellow)%h%Creset %C(magenta)(%cd)%Creset %C(blue)<%cn>%Creset %s\"
+	contribs = shortlog -sn
+	remotes = remote -v
+	branches = branch -vv
+	tags = tag
+	stashes = stash list
+	unstage = reset -q HEAD --
+	discard = checkout --
+	uncommit = reset --mixed HEAD~
+	amend = commit --amend
+	fuckit = !git reset --hard HEAD && git clean -d -f
+[push]
+	default = simple
+[pull]
+	rebase = true
+[core]
+	autocrlf = input
+	pager = diff-highlight | diff-so-fancy | less -r
+[commit]
+	template = /Users/daniel/.git-commit-template.txt
