@@ -1,7 +1,7 @@
 # cumulonimbus theme
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}[ %{$reset_color%}branch%{$fg[blue]%}:%{$fg_bold[white]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[blue]%} ]%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}(%{$reset_color%}git%{$fg[blue]%}:%{$fg_bold[white]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[blue]%})%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$reset_color%}%{$fg[magenta]%}▲%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_BEHIND="%{$reset_color%}%{$fg[magenta]%}▼%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$reset_color%}%{$fg_bold[green]%}●%{$reset_color%}"
@@ -79,7 +79,5 @@ git_prompt () {
   echo $_result
 }
 
-setopt prompt_subst
-
-PROMPT='%{$fg[magenta]%}☁︎ %{$reset_color%}%{$fg[blue]%} %~/ %{$reset_color%}%{$fg[green]%}$ %{$reset_color%}'
+PROMPT='%{$fg[magenta]%}△%{$reset_color%}%{$fg[blue]%} %~/ %{$reset_color%}%{$fg[green]%}$ %{$reset_color%}'
 RPROMPT='$(git_prompt)'
