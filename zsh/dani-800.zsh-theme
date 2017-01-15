@@ -1,7 +1,6 @@
 # dani 800 theme
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}(%{$reset_color%}git%{$fg[blue]%}:%{$fg_bold[black]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[blue]%})%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_SEPARATOR="%{$fg[black]%}git%{$fg[blue]%}:%{$fg_bold[black]%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$reset_color%}%{$fg[magenta]%}▲%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_BEHIND="%{$reset_color%}%{$fg[magenta]%}▼%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$reset_color%}%{$fg_bold[green]%}●%{$reset_color%}"
@@ -68,13 +67,13 @@ git_prompt () {
   local _result=""
 
   if [[ "${_branch}x" != "x" ]]; then
-    _result="$ZSH_THEME_GIT_PROMPT_PREFIX$_branch"
+    _result="$ZSH_THEME_GIT_PROMPT_SEPARATOR$_branch"
 
     if [[ "${_status}x" != "x" ]]; then
-      _result="$_result $_status"
+      _result="$_status $_result"
     fi
 
-    _result="$_result$ZSH_THEME_GIT_PROMPT_SUFFIX"
+    _result="$_result"
   fi
   echo $_result
 }
