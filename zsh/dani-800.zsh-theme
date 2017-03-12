@@ -1,11 +1,11 @@
 # dani 800 theme
 
 ZSH_THEME_GIT_PROMPT_SEPARATOR="%{$fg[black]%}git%{$fg[blue]%}:%{$fg_bold[black]%}"
-ZSH_THEME_GIT_PROMPT_AHEAD="%{$reset_color%}%{$fg[magenta]%}▲%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_BEHIND="%{$reset_color%}%{$fg[magenta]%}▼%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_AHEAD="%{$reset_color%}%{$fg[blue]%}▲%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_BEHIND="%{$reset_color%}%{$fg[blue]%}▼%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$reset_color%}%{$fg_bold[green]%}●%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$reset_color%}%{$fg_bold[yellow]%}●%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$reset_color%}%{$fg_bold[red]%}●%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$reset_color%}%{$fg_bold[magenta]%}●%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$reset_color%}%{$fg_bold[yellow]%}●%{$reset_color%}"
 
 git_branch () {
   ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
@@ -78,5 +78,5 @@ git_prompt () {
   echo $_result
 }
 
-PROMPT='%{$fg[magenta]%}λ%{$reset_color%}%{$fg[blue]%} %~/ %{$reset_color%}%{$fg[green]%}$ %{$reset_color%}'
+PROMPT='🍪 %{$fg[blue]%} %~/ %{$reset_color%}%{$fg[magenta]%}$ %{$reset_color%}'
 RPROMPT='$(git_prompt)'
