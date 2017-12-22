@@ -8,7 +8,7 @@
 	interactive = true
 	status = true
 [color "status"]
-    added = green
+	added = green
 	changed = magenta
 	deleted = red
 	untracked = yellow
@@ -35,5 +35,3 @@
 [core]
 	autocrlf = input
 	pager = diff-highlight | diff-so-fancy | less -r
-[commit]
-	template = /Users/daniel/.git-commit-template.txt

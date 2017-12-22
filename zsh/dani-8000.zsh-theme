@@ -1,6 +1,4 @@
-# dani 800 theme
-
-ZSH_THEME_GIT_PROMPT_SEPARATOR="%{$fg[black]%}git%{$fg[blue]%}:%{$fg_bold[black]%}"
+ZSH_THEME_GIT_PROMPT_SEPARATOR=""
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$reset_color%}%{$fg[blue]%}▲%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_BEHIND="%{$reset_color%}%{$fg[blue]%}▼%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$reset_color%}%{$fg_bold[green]%}●%{$reset_color%}"
@@ -78,5 +76,5 @@ git_prompt () {
   echo $_result
 }
 
-PROMPT='🍪 %{$fg[blue]%} %~/ %{$reset_color%}%{$fg[magenta]%}$ %{$reset_color%}'
+PROMPT='%{$fg_bold[blue]%} %~ %{$reset_color%}%{$fg[magenta]%}❯ %{$reset_color%}'
 RPROMPT='$(git_prompt)'
