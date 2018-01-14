@@ -76,5 +76,5 @@ git_prompt () {
   echo $_result
 }
 
-PROMPT='%{$fg_bold[white]%} %~ %{$reset_color%}%{$fg[magenta]%}❯ %{$reset_color%}'
+PROMPT='%{$fg_bold[white]%} %~ %{$reset_color%}%{$fg[red]%}❯%{$fg[yellow]%}❯%{$fg[green]%}❯ %{$reset_color%}'
 RPROMPT='$(git_prompt)'
