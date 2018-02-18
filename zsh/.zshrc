@@ -39,6 +39,10 @@ chpwd_functions=( auto-ls $chpwd_functions )
 # RabbitMQ
 PATH=$PATH:/usr/local/sbin
 
+# Allows executing Go binaries without specifying the full path
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 # Aliases
 alias ll='ls -al'
 alias rabctl='rabbitmqctl'
