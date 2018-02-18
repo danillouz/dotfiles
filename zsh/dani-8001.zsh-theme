@@ -71,9 +71,9 @@ git_prompt () {
       _result="$_status $_result"
     fi
 
-    _result="%{$reset_color%}[%{$reset_color%} %{$fg_bold[black]%}$_result %{$reset_color%}] "
+    _result="%{$reset_color%}[%{$reset_color%} %{$fg_bold[$ZSH_DANI_8001_BRANCH_COLOR]%}$_result %{$reset_color%}] "
   fi
   echo $_result
 }
 
-PROMPT='%{$fg_bold[black]%} %~ %{$reset_color%}$(git_prompt)%{$fg[red]%}❯%{$fg[yellow]%}❯%{$fg[green]%}❯ %{$reset_color%}'
+PROMPT='%{$fg[$ZSH_DANI_8001_WD_COLOR]%} %~ %{$reset_color%}$(git_prompt)%{$fg[red]%}❯%{$fg[yellow]%}❯%{$fg[green]%}❯ %{$reset_color%}'
