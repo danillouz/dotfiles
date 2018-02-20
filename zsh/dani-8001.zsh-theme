@@ -1,11 +1,10 @@
-ZSH_THEME_GIT_PROMPT_SEPARATOR=""
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$reset_color%}%{$fg[blue]%}▲%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_BEHIND="%{$reset_color%}%{$fg[blue]%}▼%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$reset_color%}%{$fg_bold[green]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$reset_color%}%{$fg_bold[magenta]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$reset_color%}%{$fg_bold[yellow]%}●%{$reset_color%}"
 
-git_branch () {
+git_branch() {
   ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
   ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
   echo "${ref#refs/heads/}"
@@ -59,21 +58,29 @@ git_status() {
   echo $_STATUS
 }
 
-git_prompt () {
+git_prompt() {
   local _branch=$(git_branch)
   local _status=$(git_status)
   local _result=""
 
   if [[ "${_branch}x" != "x" ]]; then
-    _result="$ZSH_THEME_GIT_PROMPT_SEPARATOR$_branch"
+    _result="%{$fg[$ZSH_DANI_8001_BRANCH_COLOR]%}$_branch%{$reset_color%}"
 
     if [[ "${_status}x" != "x" ]]; then
-      _result="$_status $_result"
+      _result="$_result $_status"
     fi
 
-    _result="%{$reset_color%}[%{$reset_color%} %{$fg_bold[$ZSH_DANI_8001_BRANCH_COLOR]%}$_result %{$reset_color%}] "
+    _result="|-> $_result "
   fi
   echo $_result
 }
 
-PROMPT='%{$fg[$ZSH_DANI_8001_WD_COLOR]%} %~ %{$reset_color%}$(git_prompt)%{$fg[red]%}❯%{$fg[yellow]%}❯%{$fg[green]%}❯ %{$reset_color%}'
+work_dir() {
+  echo "%{$fg[$ZSH_DANI_8001_WD_COLOR]%}%~%{$reset_color%} "
+}
+
+separator() {
+  echo "%{$fg[red]%}>%{$fg[yellow]%}>%{$fg[green]%}>%{$reset_color%} "
+}
+
+PROMPT='$(work_dir)$(git_prompt)$(separator)'
