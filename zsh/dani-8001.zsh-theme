@@ -70,17 +70,24 @@ git_prompt() {
       _result="$_result $_status"
     fi
 
-    _result="|-> $_result "
+    _result="on $_result"
   fi
   echo $_result
 }
 
 work_dir() {
-  echo "%{$fg[$ZSH_DANI_8001_WD_COLOR]%}%~%{$reset_color%} "
+  echo "%{$fg[$ZSH_DANI_8001_WD_COLOR]%}%~%{$reset_color%}"
+}
+
+k8s() {
+  echo "$(kube_ps1)"
 }
 
 separator() {
   echo "%{$fg[red]%}>%{$fg[yellow]%}>%{$fg[green]%}>%{$reset_color%} "
 }
 
-PROMPT='$(work_dir)$(git_prompt)$(separator)'
+PROMPT='
+$(work_dir) $(git_prompt)
+$(k8s)
+$(separator)'
