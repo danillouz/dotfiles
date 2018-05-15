@@ -70,7 +70,7 @@ git_prompt() {
       _result="$_result $_status"
     fi
 
-    _result="on $_result"
+    _result="\uF126 $_result "
   fi
   echo $_result
 }
@@ -84,10 +84,9 @@ k8s() {
 }
 
 separator() {
-  echo "%{$fg[red]%}>%{$fg[yellow]%}>%{$fg[green]%}>%{$reset_color%} "
+  echo "%{$fg[green]%}λ%{$reset_color%}"
 }
 
 PROMPT='
-$(work_dir) $(git_prompt)
-$(k8s)
-$(separator)'
+$(work_dir) $(git_prompt)$(k8s)
+$(separator) '
