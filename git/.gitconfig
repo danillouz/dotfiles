@@ -18,6 +18,9 @@
 	aa = add --all
 	l = log --stat --graph --pretty=format:\"%C(green)%d%Creset %C(yellow)%h%Creset %C(magenta)(%cr)%Creset %C(blue)<%cn>%Creset %s\"
 	h = log --pretty=format:\"%C(green)%d%Creset %C(yellow)%h%Creset %C(magenta)(%cd)%Creset %C(blue)<%cn>%Creset %s\"
+	fix = commit --fixup
+	risq = rebase -i --autosquash
+	puf = push --force-with-lease
 	contribs = shortlog -sn
 	remotes = remote -v
 	branches = branch -vv
@@ -34,4 +37,6 @@
 	rebase = true
 [core]
 	autocrlf = input
-	pager = diff-highlight | diff-so-fancy | less -r
+	pager = diff-so-fancy | less -r
+[help]
+	autocorrect = -1

@@ -3,9 +3,7 @@ export ZSH=/Users/daniel/.oh-my-zsh
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-ZSH_THEME="dani-8001"
-ZSH_DANI_8001_WD_COLOR="blue"
-ZSH_DANI_8001_BRANCH_COLOR="cyan"
+ZSH_THEME="lambdani"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -14,17 +12,6 @@ ZSH_DANI_8001_BRANCH_COLOR="cyan"
 plugins=(zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
-
-# kube PS1
-# see https://github.com/jonmosco/kube-ps1
-KUBE_PS1_PREFIX=""
-KUBE_PS1_SUFFIX=""
-KUBE_PS1_SYMBOL_DEFAULT="k8s ctx "
-KUBE_PS1_SYMBOL_COLOR=""
-KUBE_PS1_SEPARATOR=""
-KUBE_PS1_DIVIDER=" ns "
-KUBE_PS1_NS_COLOR="yellow"
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 
 # User configuration
 
@@ -46,20 +33,22 @@ chpwd_functions=( auto-ls $chpwd_functions )
 # RabbitMQ
 PATH=$PATH:/usr/local/sbin
 
-# Allows executing Go binaries without specifying the full path
+# Set Go path and allow execution of Go binaries without specifying full path
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 # Aliases
 alias ll='ls -al'
-alias rabbi='rabbitmqctl'
-alias kub='kubectl'
+alias r='rabbitmqctl'
+alias m='minikube'
+alias k='kubectl'
+alias d='docker'
+alias g='git'
 
+# Google Cloud SDK
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/daniel/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/daniel/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/daniel/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/daniel/google-cloud-sdk/completion.zsh.inc'; fi
 
-# Istio
-export PATH=/Users/daniel/istio-0.6.0/bin:$PATH
