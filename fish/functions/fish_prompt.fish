@@ -12,11 +12,12 @@ function fish_prompt
   end
 
   set -l fish "⋊>"
-  set -l ahead (set_color green)"↑"
-  set -l behind (set_color red)"↓"
-  set -l diverged (set_color red)"☂︎"
-  set -l dirty (set_color red)"✘"
-  set -l none (set_color green)"✔︎"
+  set -l ahead (set_color green)"↑ "
+  set -l behind (set_color red)"↓ "
+  set -l diverged (set_color red)"☂︎ "
+  set -l dirty (set_color red)"✱ "
+  set -l stashed (set_color yellow)"❒ "
+  set -l none (set_color green)"✔︎ "
   set -l separator (set_color yellow)"❯"(set_color red)"❯"(set_color green)"❯"
 
   set -l normal_color (set_color normal)
@@ -41,6 +42,10 @@ function fish_prompt
     echo -n -s " " $directory_color $cwd $normal_color
     echo -n -s " git " $repository_color (git_branch_name) $normal_color " "
 
+    if git_is_stashed
+      echo -n -s $stashed
+    end
+    
     if git_is_touched
       echo -n -s $dirty
     else
@@ -50,5 +55,5 @@ function fish_prompt
     echo -n -s " " $directory_color $cwd $normal_color
   end
 
-  echo -n -s " " $separator " "
+  echo -n -s $separator " "
 end
