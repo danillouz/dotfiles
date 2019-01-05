@@ -11,20 +11,23 @@ function fish_prompt
     set cwd (prompt_pwd)
   end
 
-  set -l fish "⋊>"
-  set -l ahead (set_color green)" ↑"
-  set -l behind (set_color red)" ↓"
-  set -l diverged (set_color red)" ☂︎"
-  set -l dirty (set_color red)" ✱"
-  set -l stashed (set_color yellow)" ❒"
-  set -l none (set_color green)" ✔︎"
-  set -l separator (set_color yellow)"❯"(set_color red)"❯"(set_color green)"❯"
-
   set -l normal_color (set_color normal)
   set -l success_color (set_color $fish_pager_color_progress ^/dev/null; or set_color green)
   set -l error_color (set_color $fish_color_error ^/dev/null; or set_color red --bold)
   set -l directory_color (set_color magenta)
-  set -l repository_color (set_color white)
+  set -l repository_color (set_color blue)
+
+  set -l fish "⋊>"
+  set -l separator (set_color cyan)"➜ "
+
+  set -l ahead "$normal_color ⇡"
+  set -l behind "$normal_color ⇣"
+  set -l diverged (set_color red)" ←→"
+  set -l staged (set_color green)" ✔"
+  set -l dirty (set_color red)" ✘"
+  set -l stashed (set_color yellow)" ⌗"
+
+  set -l has_untracked (git_untracked 2>/dev/null)
 
   if test $last_command_status -eq 0
     echo -n -s $success_color $fish $normal_color
@@ -45,11 +48,15 @@ function fish_prompt
     if git_is_stashed
       echo -n -s $stashed
     end
-    
-    if git_is_touched
+
+    if git_is_staged
+      echo -n -s $staged
+    end
+
+    if git_is_dirty ;or [ "$has_untracked" ]
       echo -n -s $dirty
     else
-      echo -n -s (git_ahead $ahead $behind $diverged $none)
+      echo -n -s (git_ahead $ahead $behind $diverged)
     end
   else
     echo -n -s " " $directory_color $cwd $normal_color
