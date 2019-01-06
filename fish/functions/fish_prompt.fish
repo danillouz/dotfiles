@@ -12,8 +12,8 @@ function fish_prompt
   end
 
   set -l normal_color (set_color normal)
-  set -l success_color (set_color $fish_pager_color_progress ^/dev/null; or set_color green)
-  set -l error_color (set_color $fish_color_error ^/dev/null; or set_color red --bold)
+  set -l success_color (set_color white --bold)
+  set -l error_color (set_color $fish_color_error)
   set -l directory_color (set_color magenta)
   set -l repository_color (set_color blue)
 
