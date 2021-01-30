@@ -1,12 +1,6 @@
-set fish_greeting ""
-
 # bat
-set -x BAT_THEME "DarkNeon"
+set -x BAT_THEME "Dracula"
 
 # Go
 set -x -U GOPATH $HOME/go
 set PATH $PATH $GOPATH/bin
-
-# Aliases
-alias ll="ls -al"
-alias cat="bat"
