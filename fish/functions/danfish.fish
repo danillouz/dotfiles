@@ -79,6 +79,8 @@ function danfish
       switch "$commit_count"
       case ""
         # no upstream
+      case "0"\t"0"
+        echo ""
       case "*"\t"0"
         test -n "$behind"; and echo "$behind"
       case "0"\t"*"
