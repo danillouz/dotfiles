@@ -1,3 +1,3 @@
 function fish_prompt
-    danfish
+  danfish
 end
