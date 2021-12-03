@@ -1,45 +1,42 @@
 [user]
   name = Daniël Illouz
   email = daniel.illouz@me.com
+
 [color]
   ui = true
   branch = true
   diff = true
   interactive = true
   status = true
+
 [color "status"]
   added = green
-  changed = magenta
-  deleted = red
-  untracked = yellow
+  changed = yellow
+  deleted = red strike
+  untracked = magenta
+  branch = blue bold ul
+
 [alias]
   aliases = config --get-regexp alias
-  s = status -sb
-  aa = add --all
-  l = log --stat --graph --pretty=format:\"%C(green)%d%Creset %C(yellow)%h%Creset %C(magenta)(%cr)%Creset %C(blue)<%cn>%Creset %s\"
-  h = log --pretty=format:\"%C(green)%d%Creset %C(yellow)%h%Creset %C(magenta)(%cd)%Creset %C(blue)<%cn>%Creset %s\"
-  fix = commit --fixup
-  risq = rebase -i --autosquash
-  puf = push --force-with-lease
   contribs = shortlog -sn
-  remotes = remote -v
-  branches = branch -vv
   tags = tag
-  stashes = stash list
-  unstage = reset -q HEAD --
-  discard = checkout --
-  uncommit = reset --mixed HEAD~
-  amend = commit --amend
   fuckit = !git reset --hard HEAD && git clean -d -f
+
 [push]
   default = simple
+
 [pull]
   rebase = true
+
 [core]
   autocrlf = input
+
 [pager]
   diff = diff-so-fancy | less -r
   show = diff-so-fancy | less -r
 
 [help]
   autocorrect = -1
+
+[commit]
+  gpgsign = true
