@@ -1,0 +1,28 @@
+# https://starship.rs/config
+
+format = """
+$username\
+$hostname\
+$shlvl\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$memory_usage\
+$aws\
+$gcloud\
+$env_var\
+$custom\
+$cmd_duration\
+$jobs\
+$time\
+$status\
+$shell\
+$character"""
+
+add_newline = false
+
+[directory]
+fish_style_pwd_dir_length = 1
