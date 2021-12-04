@@ -49,5 +49,7 @@ alias ll='ls -al'
 alias scat='bat'
 
 alias zconf='code ~/.zshrc'
+alias aliasconf='code ~/.oh-my-zsh/custom/aliases.zsh'
+alias starconf='code ~/.config/starship.toml'
 
 alias c='code .'
