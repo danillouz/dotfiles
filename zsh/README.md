@@ -1,13 +1,18 @@
 # Zsh 🐚
 
+Using [Oh my Zsh](https://ohmyz.sh/#install).
+
 ## Dependencies
 
 - [bat](https://github.com/sharkdp/bat)
 - [exa](https://github.com/ogham/exa)
-- [fzf](https://github.com/junegunn/fzf)
+
+## Prompt
+
+- [Starship](https://starship.rs/)
 
 ## Plugins
 
-- [Oh my Zsh](https://ohmyz.sh/#install)
-- [Powerlevel 10K](https://github.com/romkatv/powerlevel10k)
-- [z](https://github.com/jethrokuan/z)
+- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [z](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/z)
