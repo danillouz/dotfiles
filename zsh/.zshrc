@@ -29,6 +29,9 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor
 export EDITOR='vim'
 
+# Don't record duplicates
+export HISTCONTROL=ignoreboth:erasedups
+
 # bat: https://github.com/sharkdp/bat
 export BAT_THEME='Dracula'
 

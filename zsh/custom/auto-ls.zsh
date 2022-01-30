@@ -1,3 +1,5 @@
+# Put this file in `~/.oh-my-zsh/custom/`
+
 # Auto `ls` directory contents on `cd`
 # exa: https://github.com/ogham/exa
 auto_ls () {

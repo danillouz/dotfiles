@@ -1,3 +1,5 @@
+# Put this file in `~/.oh-my-zsh/custom/`
+
 # Git
 alias g='git'
 
@@ -32,7 +34,7 @@ alias gaa='git add --all'
 
 alias gc='git commit -v'
 alias gca='git commit -v -a'
-alias gcam='git commit -v -a --amend'
+alias gcam='git commit -v --amend'
 alias gcfx='git commit --fixup'
 alias gunc='git reset --mixed HEAD~' # uncommit
 alias guns='git reset -q HEAD --' # unstage
@@ -46,7 +48,7 @@ alias ls='exa'
 alias ll='ls -al'
 
 # Misc
-alias scat='bat'
+alias cat='bat'
 
 alias zconf='code ~/.zshrc'
 alias aliasconf='code ~/.oh-my-zsh/custom/aliases.zsh'
